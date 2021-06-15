@@ -15,8 +15,7 @@ namespace MuppetShow.Models
     
     public partial class Database101Entities1 : DbContext
     {
-        public Database101Entities1()
-            : base("name=Database101Entities1")
+        public Database101Entities1(): base("name=Database101Entities1")
         {
         }
     
