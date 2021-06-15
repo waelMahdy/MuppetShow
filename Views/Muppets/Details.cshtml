@@ -1,0 +1,61 @@
+﻿@model MuppetShow.Models.MuppetsTable
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MuppetsTable</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.firstAppearance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.firstAppearance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.image)
+        </dt>
+
+        <dd>
+            @*@Html.DisplayFor(model => model.image)*@
+            <a href="~/Content/images/@Html.DisplayFor(model => model.image)" target="_blank"><img src="~/Content/images/@Html.DisplayFor(model => model.image)" height="110px" /></a>
+
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.video)
+        </dt>
+
+        <dd>
+            @*@Html.DisplayFor(model => model.video)*@
+            <iframe src="https://www.youtube.com/embed/@Html.DisplayFor(model => model.video)" width="30%" height="25%" controls></iframe>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.likes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.likes)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
